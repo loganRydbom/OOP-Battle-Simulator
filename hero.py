@@ -21,11 +21,16 @@ class Hero:
         self.health = 120
         #TODO Set the hero's attack power. Should it be more consistent than the paladin's?
         self.attackPower = 50
+        self.mana = 0
     
 
     def strike(self):
         # TODO Implement the hero's attack logic. It could be stronger or more consistent than a paladin's.
-        return random.randint(1, self.attackPower)
+        self.mana += random.randint(1, 5)
+        if self.mana >= 10:
+            return 100
+        else:
+            return random.randint(1, self.attackPower)
 
     
     def receive_damage(self, damage):

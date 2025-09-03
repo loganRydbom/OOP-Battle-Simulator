@@ -14,16 +14,24 @@ def main():
 
     # Keep track of how many paladins were defeated
     defeated_paladins = 0
-
+    round = 1
+    damageDone = 0
+    damageTaken = 0
     # Battle Loop 
     while hero.is_alive() and any(paladin.is_alive() for paladin in paladins):
-        print("\nNew Round!")
+        print(f"\nRound {round}!")
         
         # Hero's turn to attack
         target_paladin = random.choice([paladin for paladin in paladins if paladin.is_alive()])
         damage = hero.strike()
-        print(f"Hero attacks {target_paladin.name} for {damage} damage!")
-        target_paladin.take_damage(damage)
+        if damage == 100:
+            print(f"Hero obliterates the {target_paladin.name} for {damage} damage with Frostmourne!")
+            target_paladin.take_damage(damage)
+        else:
+            print(f"Hero attacks {target_paladin.name} for {damage} damage!")
+            target_paladin.take_damage(damage)
+
+        damageDone += damage
 
         # Check if the target paladin was defeated
         if not target_paladin.is_alive():
@@ -36,7 +44,8 @@ def main():
                 damage = paladin.attack()
                 print(f"{paladin.name} attacks hero for {damage} damage!")
                 hero.receive_damage(damage)
-
+        damageTaken += damage
+        round += 1
     # Determine outcome
     if hero.is_alive():
         print(f"\nThe hero has defeated all the paladins! ༼ ᕤ◕◡◕ ༽ᕤ")
@@ -45,6 +54,8 @@ def main():
 
     # Final tally of paladins defeated
     print(f"\nTotal paladins defeated: {defeated_paladins} / {len(paladins)}")
+    print(f"{hero.name} took {damageTaken} points of damage.")
+    print(f"{hero.name} dealt {damageDone} points of damage.")
 
 if __name__ == "__main__":
     main()
