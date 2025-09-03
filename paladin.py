@@ -1,8 +1,8 @@
 import random
 
-class Goblin:
+class Paladin:
     """
-    This is our goblin blueprint 
+    This is our paladin blueprint 
     
     Attributes:
         name: Awe, it has a name? How cute!
@@ -19,7 +19,9 @@ class Goblin:
 
     def take_damage(self, damage):
         self.health -= damage
-        # TODO We should prevent the goblins health from going into the NEGATIVE
+        # TODO We should prevent the paladins health from going into the NEGATIVE
+        if self.health < 0:
+            self.health = 0
         print(f"{self.name} takes {damage} damage. Health is now {self.health}.")
 
     def is_alive(self):
