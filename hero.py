@@ -18,7 +18,7 @@ class Hero:
         #TODO Set the hero's name.
         self.name = name
         #TODO Set the hero's health. You might give the hero more health than a paladin.
-        self.health = 120
+        self.health = 150
         #TODO Set the hero's attack power. Should it be more consistent than the paladin's?
         self.attackPower = 50
         self.mana = 0
@@ -28,6 +28,8 @@ class Hero:
         # TODO Implement the hero's attack logic. It could be stronger or more consistent than a paladin's.
         self.mana += random.randint(1, 5)
         if self.mana >= 10:
+            print("Arthas' sword seems to be glowing brightly...")
+            self.mana = 0
             return 100
         else:
             return random.randint(1, self.attackPower)
