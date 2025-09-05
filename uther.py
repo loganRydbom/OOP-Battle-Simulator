@@ -10,4 +10,4 @@ class Uther(Enemy):
         # TODO We should prevent the paladins health from going into the NEGATIVE
         if self.health < 0:
             self.health = 0
-        print(f"{self.name} takes {damage} damage. Health is now {self.health}.")
+        print(f"{self.name} takes {damage / 2} damage. Health is now {self.health}.")

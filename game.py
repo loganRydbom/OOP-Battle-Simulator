@@ -11,10 +11,10 @@ def bossBattle(player):
         target_paladin = uther
         damage = player.strike()
         if damage == 100:
-            print(f"Hero obliterates the {target_paladin.name} for {damage} damage with Frostmourne!")
+            print(f"Hero obliterates the {target_paladin.name} for {damage / 2} damage with Frostmourne!")
             target_paladin.take_damage(damage)
         else:
-            print(f"Hero attacks {target_paladin.name} for {damage} damage!")
+            print(f"Hero attacks {target_paladin.name} for {damage / 2} damage!")
             target_paladin.take_damage(damage)
 
 
