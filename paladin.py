@@ -5,7 +5,7 @@ class Paladin:
     This is our paladin blueprint 
     
     Attributes:
-        name: Awe, it has a name? How cute!
+        name: The name of the Paladin
         health: The current health value 
         attack_power: How much health will be drained from opponent if hit
     """
