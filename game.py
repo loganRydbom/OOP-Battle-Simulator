@@ -84,5 +84,6 @@ def main():
     print(f"{hero.name} took {damageTaken} points of damage.")
     print(f"{hero.name} dealt {damageDone} points of damage.")
 
+
 if __name__ == "__main__":
     main()
