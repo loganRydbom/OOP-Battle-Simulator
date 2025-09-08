@@ -28,6 +28,11 @@ def bossBattle(player):
             damage = uther.attack()
             print(f"{uther.name} attacks hero for {damage} damage!")
             player.receive_damage(damage)
+        
+    if player.is_alive():
+        print(f"\nThe hero has defeated Uther the Lightbringer! ༼ ᕤ◕◡◕ ༽ᕤ")
+    else:
+        print(f"\nThe hero has been defeated, failing in his conquest. Game Over. (｡•́︿•̀｡)")
 
 def main():
     print("Welcome to the Battle Arena!")
